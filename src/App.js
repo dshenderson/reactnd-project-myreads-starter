@@ -1,9 +1,10 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import './App.css';
 import * as BooksAPI from './BooksAPI';
 import ListBooks from './ListBooks';
 import SearchBooks from './SearchBooks';
+import Error404 from './Error404';
 
 class BooksApp extends React.Component {
   state = {
@@ -36,12 +37,15 @@ class BooksApp extends React.Component {
     return (
       <div className="list-books">
         <h1 className="page-title">MyReads</h1>
-        <Route exact path="/" render={() => (
-          <ListBooks books={this.state.books} onUpdateBook={this.reshelveBook} />
-        )}/>
-        <Route path="/search" render={() => (
-          <SearchBooks library={this.state.books} onUpdateBook={this.reshelveBook} />
-        )}/>
+        <Switch>
+          <Route exact path="/" render={() => (
+            <ListBooks books={this.state.books} onUpdateBook={this.reshelveBook} />
+          )}/>
+          <Route path="/search" render={() => (
+            <SearchBooks library={this.state.books} onUpdateBook={this.reshelveBook} />
+          )}/>
+          <Route component={Error404}/>
+        </Switch>
       </div>
     );
   }

@@ -234,3 +234,11 @@ body,
   padding: 0;
   position: absolute;
 }
+
+/* 404 page */
+.error404 {
+  width: 700px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 68px;
+}
