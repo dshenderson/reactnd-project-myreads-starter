@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import DebounceInput from 'react-debounce-input';
 import * as BooksAPI from './BooksAPI';
 import BooksGrid from './BooksGrid';
 
@@ -52,7 +53,7 @@ class SearchBooks extends Component {
           <Link to="/" className="close-search">Close</Link>
           <div className="search-books-input-wrapper">
             <label htmlFor="search-books" className="sr-only">Search database for books</label>
-            <input
+            <DebounceInput
               id="search-books"
               type="text"
               placeholder="Search by title or author"
