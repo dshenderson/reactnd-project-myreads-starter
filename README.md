@@ -1,6 +1,6 @@
-# MyReads Project
+# Bookshelf Project
 
-This is my submission for the MyReads Project for Udacity's React Fundamentals course.
+This app allows users to keep track of their books.
 
 ## Functionality
 
